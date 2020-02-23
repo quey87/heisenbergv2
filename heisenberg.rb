@@ -12,7 +12,9 @@ end
 
 if a == true
     system("figlet Heisenberg")
-    puts "BY : QUEY7Z | TERMUX - LİNUX - WİNDOWS KULLANCILARI İÇİN TASARLANDI."
+    puts "Author : QUEY7Z
+	
+	".blue
 else
     puts"
 ██╗  ██╗███████╗██╗███████╗███████╗███╗   ██╗██████╗ ███████╗██████╗  ██████╗ 
