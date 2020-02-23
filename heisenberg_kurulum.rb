@@ -17,10 +17,9 @@ elsif islem == "2"
     system("pkg install figlet -y")
     system("git clone https://github.com/sqlmapproject/sqlmap")
     system("mv heisenberg.rb sqlmap")
-    system("cd sqlmap")
+    puts "cd sqlmap KODUNU YAZARAK KLASÖRE GİRİN ARDINDAN HEİSENBERG.RB PROGRAMINI ÇALIŞTIRIN."
     puts "KURULUM TAMAMLANDI !"
-    sleep(1)
-    system("ruby heisenberg.rb")
+    sleep(5)
 elsif islem == "3"
     system("gem install colorize")
     system("gem install os")
