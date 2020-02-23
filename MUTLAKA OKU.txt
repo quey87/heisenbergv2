@@ -1,0 +1,8 @@
+Programý çalýþtarabilmek için ruby gereklidir. Lütfen ruby'i indirin.
+
+Ardýndan: heisenberg_kurulum.rb dosyasýný çalýþtýrarak kurulumu yapýn. Sonrasýnda heisenberg.rb programýný çalýþtýrarak iþlemlerinizi yapabilirsiniz :)
+
+Takýldýðýnýz yer / þikayet / öneri / hata, hakkýnda bilgilendirmek için
+
+ÝNSTAGRAM : quey7z
+TURKHACKTEAM : quey87
