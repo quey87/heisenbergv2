@@ -17,6 +17,7 @@ elsif islem == "2"
     system("pkg install figlet -y")
     system("git clone https://github.com/sqlmapproject/sqlmap")
     system("mv heisenberg.rb sqlmap")
+    system("clear")
     puts "cd sqlmap KODUNU YAZARAK KLASÖRE GİRİN ARDINDAN HEİSENBERG.RB PROGRAMINI ÇALIŞTIRIN."
     puts "KURULUM TAMAMLANDI !"
     sleep(5)
