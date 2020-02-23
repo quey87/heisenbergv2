@@ -13,7 +13,6 @@ end
 if a == true
     system("figlet Heisenberg")
     puts "Author : QUEY7Z
-	
 	".blue
 else
     puts"
