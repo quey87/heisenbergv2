@@ -212,7 +212,8 @@ Column(s) : #{column}
 1) SQL açıklı site tarama
 2) SQL açıklı siteyi dork yardımıyla bulma (dork search)
 3) TXT dosyasındaki birden fazla siteleri tarama
-        ".yellow
+4) Hedef site SQL açık tarama
+".yellow
 
         print "İşlem : ".green
         islemm = gets.chop
@@ -258,6 +259,12 @@ Column(s) : #{column}
             print "TXT (örnek D:\\Notlarım\\hedef.txt) : ".yellow
             hedef = gets.chop
             system("sqlmap.py -m #{hedef}")
+        elsif islemm == "4"
+            system("cls")
+            print "Site (örnek : google.com) : ".yellow
+            siteadres = gets.chop
+            gercek = "inurl:#{siteadres} inurl:.php?id="
+            system("sqlmap.py -g #{gercek}")
         end
     else
         system("cls")
