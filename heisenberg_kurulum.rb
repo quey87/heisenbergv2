@@ -1,3 +1,5 @@
+system("cls")
+system("clear")
 puts"
 1) Windows
 2) Termux

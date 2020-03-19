@@ -127,16 +127,10 @@ end
 def sqlmap
     system("cls")
     system("clear")
-    while 6
-        puts "
-1) Windows / Termux
-2) Linux
-        ".yellow
+    
+    win = OS.windows?
 
-        print "Kullandığınız işletim sistemini seçin : ".green
-        isletim = gets.chop
-
-    if isletim == "1"
+    if win == true
         system("cls")
         system("clear")
         testcikk = OS.linux?
@@ -206,7 +200,7 @@ Column(s) : #{column}
             system("python2 sqlmap.py -g #{gercek}")
         end           
 
-    elsif isletim == "2"
+    elsif win == false
         system("clear")
         puts "
 1) SQL açıklı site tarama
@@ -269,8 +263,6 @@ Column(s) : #{column}
     else
         system("cls")
         system("clear")
-        break
-    end
     end
 end
 
